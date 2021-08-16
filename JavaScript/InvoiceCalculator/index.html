@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Invoice Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <h1>Invoice Total Calculator</h1>
+        <p>Please enter the values and click "Calcuclate".</p>
+
+        <label for="type">Customer Type:</label>
+        <select id="type">
+          <option value="r">Regular</option>
+          <option value="l">Loyalty Program</option>
+          <option value="h">Honored Citizen</option>
+        </select>
+        <br />
+        <br />
+        <label for="subtotal">Invoice Subtotal:</label>
+        <input type="text" id="subtotal" /><br />
+        <hr />
+
+        <label for="percent">Discount Percent:</label>
+        <input type="text" id="percent" disabled /><br />
+
+        <label for="discount">Discount Amount:</label>
+        <input type="text" id="discount" disabled /><br />
+
+        <label for="subtotal">Invoice Subtotal:</label>
+        <input type="text" id="total" disabled /><br />
+
+        <button type="button" id="calculate">Calculate</button>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
