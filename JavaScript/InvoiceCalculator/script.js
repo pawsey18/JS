@@ -1,6 +1,6 @@
 "use strict";
 
-const $ = function (id) {
+const $ = (id) => {
   return document.getElementById(id);
 };
 
@@ -26,7 +26,7 @@ const calculateDiscountPercent = function (customerType, invoiceSubtotal) {
   return discountPercent;
 };
 
-let processEntries = function() {
+let processEntries = function () {
   let discountAmount;
   let invoiceTotal;
   let discountPercent;
