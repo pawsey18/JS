@@ -10,7 +10,7 @@
     <div id="container">
       <main>
         <h1>Task Manager</h1>
-        <div id="tasks"></div>
+
         <label for="task">Task:</label><br />
         <input type="text" name="task" id="task" /><br />
         <input
@@ -28,12 +28,17 @@
         <input
           type="button"
           value="Bold"
+          id="bold"
           name="bold"
           value="Bold Exclamation Points"
         /><br />
-     
-      </main>   
-      <div class="clear"></div>
+      </main>
+      <div class="clear"><div style="margin-left: 10px" id="tasks"></div></div>
     </div>
+
+    <script src="script.js"></script>
+    <script src="library_storage.js"></script>
+    <script src="library_tasklist.js"></script>
+    <script src="library_task.js"></script>
   </body>
 </html>

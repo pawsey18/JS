@@ -1,13 +1,26 @@
-const localStorageObject = {
-  get: () => localStorage.getItem(this.key),
-  set: (str) => localStorage.setItem(this.key, str),
-  clear: () => localStorage.setItem(this.key, "")
+let localStorageObject = {
+  get: function () {
+    return localStorage.getItem(this.key);
+  },
+  set: function (str) {
+    localStorage.setItem(this.key, str);
+  },
+  clear: function () {
+    localStorage.setItem(this.key, "");
+  }
 };
 
-const storageObject = Object.create(localStorageObject);
-//storageObject.get = "HI";
+let storageObject = Object.create(localStorageObject);
+/**
+ * the get and set methods use callback functions to determine their inner work
+ * ings . they are checking to see if a function has been passed
+ * if it has been then if false it passes along whatever was in storage (get) , or whatever
+ * was in passed in set
+ *
+ *
+ */
 
-storageObject.get = (callback) => {
+storageObject.get = function (callback) {
   let storage = localStorageObject.get.call(this);
   if (callback && typeof callback === "function") {
     return callback(storage);
@@ -16,7 +29,7 @@ storageObject.get = (callback) => {
   }
 };
 
-storageObject.set = (storage, callback) => {
+storageObject.set = function (storage, callback) {
   let storageString;
   if (callback && typeof callback === "function") {
     storageString = callback(storage);
@@ -26,8 +39,8 @@ storageObject.set = (storage, callback) => {
   localStorageObject.set.call(this, storageString);
 };
 
-let getStorage = (key) => {
+let getStorage = function (key) {
   let t = Object.create(storageObject);
-  t.key = t;
+  t.key = key;
   return t;
 };
